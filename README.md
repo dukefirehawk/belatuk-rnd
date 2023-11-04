@@ -1,4 +1,4 @@
-# belatuk-rnd
+# Belatuk R&D
 
 This repository contains projects developed as part of the research and development efforts to improve dart framework in order to bring it inline with the industry standard practise. Currently most are for improving Angel3 framework. Each of the projects are designed to better understand how a particular libraries or dart feature works. Once the behaviour and design patterns are crystalized, they will be incorporated into the framework as part of the refactoring and improvement process.
 
