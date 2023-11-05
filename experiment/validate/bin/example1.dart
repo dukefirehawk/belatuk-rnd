@@ -51,7 +51,7 @@ void main() async {
       'id_setor': 524,
       'confidencial': false,
       'andamentos': [
-        {'ano_exercicio': '2023'}
+        {'ano_exercicio': 2023}
       ]
     }
   };

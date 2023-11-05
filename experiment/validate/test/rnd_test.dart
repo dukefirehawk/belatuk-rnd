@@ -17,13 +17,21 @@ void main() async {
     if (rec.stackTrace != null) print(rec.stackTrace);
   }
 
+  Matcher isEquals(dynamic expectVal) {
+    return predicate((dynamic value) {
+      print('value: $value, expectVal: $expectVal');
+
+      return value == expectVal;
+    }, 'is Equals $expectVal');
+  }
+
   final Validator echoSchema = Validator({'messa*': isString});
 
   final Validator orderItemSchema = Validator({
     'id': [isInt, isPositive],
     'item_no': isString,
     'item_name': isString,
-    'quantity': isInt,
+    'quantity': [isInt, isEquals(10)],
     'description?': isString
   });
 
@@ -35,13 +43,6 @@ void main() async {
     'order_items': []
   });
 
-  Matcher isEquals(expectVal) {
-    return predicate((dynamic value) {
-      print('isEquals value: $value == $expectVal');
-      return value == expectVal;
-    }, 'is Equals');
-  }
-
   setUp(() async {
     app = Angel(reflector: MirrorsReflector());
     http = AngelHttp(app, useZone: false);
@@ -50,7 +51,7 @@ void main() async {
       'id': 1,
       'item_no': 'a1',
       'item_name': 'Apple',
-      'quantity': '1',
+      'quantity': 11,
       'description': 1
     };
 
