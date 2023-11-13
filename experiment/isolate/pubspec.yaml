@@ -1,6 +1,6 @@
 name: rnd_app
 version: 1.0.0
-description: Research and Development on isolate
+description: Research and Development on tests package
 publish_to: none
 environment:
   sdk: '>=3.0.0 <4.0.0'
